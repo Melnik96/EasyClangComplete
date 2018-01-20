@@ -18,6 +18,8 @@ from ..tools import PKG_NAME
 from ..clang.utils import ClangUtils
 from ..settings.settings_storage import SettingsStorage
 
+from .nuttycc1 import nutty_translate
+
 from threading import RLock
 from os import path
 
@@ -130,6 +132,7 @@ class Completer(BaseCompleter):
 
         file_name = view.file_name()
         file_body = view.substr(sublime.Region(0, view.size()))
+        file_body = nutty_translate(file_body)
 
         unsaved_files = [(file_name, file_body)]
 

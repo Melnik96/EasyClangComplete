@@ -121,7 +121,7 @@ def nutty_translate(filename, in_source):
     file.write(in_source)
     file.close()
     
-    e_source = os.popen('gcc -E -I/home/melnik/projects/nutty_lang/pycparser/utils/fake_libc_include/ '+'/tmp/pncc'+os.path.basename(filename)+'.nuti.i').read()
+    e_source = os.popen('gcc -E -I/home/melnik/projects/nutty_lang/pycparser/utils/fake_libc_include/ -I/usr/local/include/ '+'/tmp/pncc'+os.path.basename(filename)+'.nuti.i').read()
         
     for line in source_code.split("\n"):
         source_code_lines.append(line)

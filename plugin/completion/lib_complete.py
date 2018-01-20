@@ -134,6 +134,7 @@ class Completer(BaseCompleter):
         file_body = view.substr(sublime.Region(0, view.size()))
         print("self.clang_flags", self.clang_flags)
         file_body = nutty_translate(file_name, file_body)
+        print(file_body)
 
         unsaved_files = [(file_name, file_body)]
 

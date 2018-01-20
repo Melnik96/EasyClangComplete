@@ -117,11 +117,11 @@ class FuncDefVisitor(c_ast.NodeVisitor):
 
 
 def nutty_translate(filename, in_source):
-    file = open('/tmp/pncc'+filename+'.nuti.i','w')
+    file = open('/tmp/pncc'+os.path.basename(filename)+'.nuti.i','w')
     file.write(in_source)
     file.close()
     
-    e_source = os.popen('gcc -E -I/home/melnik/projects/nutty_lang/pycparser/utils/fake_libc_include/ '+include_dirs+' '+'/tmp/pncc'+filename+'.nuti.i').read()
+    e_source = os.popen('gcc -E -I/home/melnik/projects/nutty_lang/pycparser/utils/fake_libc_include/ '+include_dirs+' '+'/tmp/pncc'+os.path.basename(filename)+'.nuti.i').read()
         
     for line in source_code.split("\n"):
         source_code_lines.append(line)

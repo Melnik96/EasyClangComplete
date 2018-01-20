@@ -3,7 +3,7 @@ import sys, os
 
 from subprocess import call
 
-from pycparser import c_parser, c_ast
+from .pycparser import c_parser, c_ast
 
 source_code = ''
 source_code_lines = []
